@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pz_rail_sklearn-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pz_rail_sklearn-{{ version }}.tar.gz
   sha256: f9a5844144d0320a6c53b48313a8539eae71d70c209fc988d2eefe90986a582d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=62
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - pz-rail-base >=1.0.3
     - scikit-learn
     - pandas
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   license: MIT
