@@ -1,13 +1,13 @@
 {% set name = "pz-rail-sklearn" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pz_rail_sklearn-{{ version }}.tar.gz
-  sha256: f9a5844144d0320a6c53b48313a8539eae71d70c209fc988d2eefe90986a582d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pz_rail_sklearn-{{ version }}.tar.gz
+  sha256: f7aa75df82470d599b8d6e6e68379f9ce8df814dff4fcb83a9c6062420ef7b2d
 
 build:
   noarch: python
